@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Sample test Suite]" verbose="0">
+  <test thread-count="5" name="Sample test(failed)" verbose="0">
+    <classes>
+      <class name="SalesForceAutomation.UserMenuDropDown">
+        <methods>
+          <include name="Login"/>
+          <include name="SelectMySettings"/>
+        </methods>
+      </class> <!-- SalesForceAutomation.UserMenuDropDown -->
+    </classes>
+  </test> <!-- Sample test(failed) -->
+</suite> <!-- Failed suite [Sample test Suite] -->

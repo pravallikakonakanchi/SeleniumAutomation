@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 18.266 s <<< FAILURE! - in TestSuite
+SelectMySettings(SalesForceAutomation.UserMenuDropDown)  Time elapsed: 8.19 s  <<< FAILURE!
+org.openqa.selenium.InvalidSelectorException: 
+invalid selector: Unable to locate an element with the xpath expression //select[@id='duel_select_0']) because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//select[@id='duel_select_0'])' is not a valid XPath expression.
+  (Session info: chrome=111.0.5563.112)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-N9GF13S', ip: '10.0.0.38', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.112, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\skona\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63880}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8bc8e5043b7523127a692afae76010ac
+*** Element info: {Using=xpath, value=//select[@id='duel_select_0'])}
+	at SalesForceAutomation.UserMenuDropDown.SelectMySettings(UserMenuDropDown.java:68)
+
