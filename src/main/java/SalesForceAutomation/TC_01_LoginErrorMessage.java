@@ -1,14 +1,17 @@
 package SalesForceAutomation;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import file.utils.PropertiesFileutils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TC_01_LoginErrorMessage {
+public class TC_01_LoginErrorMessage extends PropertiesFileutils{
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -16,7 +19,8 @@ public class TC_01_LoginErrorMessage {
 		driver.manage().window().maximize();
 		Thread.sleep(5000);
 		System.out.println("enter username");
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("kpravallika@abc.com");
+		String username = readPropertiesFile("C:\\Javaworkspace\\selenium_practice\\testdata\\Prod_Credentials.properties","dev.username");
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(username);
 		System.out.println("enter blank password");
 		driver.findElement(By.xpath("//input[@id='password']")).clear();
 		Thread.sleep(3000);

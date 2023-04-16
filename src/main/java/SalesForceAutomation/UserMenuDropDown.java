@@ -1,9 +1,14 @@
 package SalesForceAutomation;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.channels.Selector;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -22,12 +27,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class UserMenuDropDown extends ReusableMethods{
 	
 	@BeforeClass
-	public void Login() {
+	public void Login() throws IOException {
+		Properties prop = new Properties();
+	    InputStream input = new FileInputStream("C:\\Users\\skona\\OneDrive\\Desktop\\config.properties");
+
+	    // load a properties file
+	    prop.load(input);
+	    String username = prop.getProperty("username");
+	    String password = prop.getProperty("password");
 		System.out.println("Testing Testng");
 		GetDriver("chrome");
 		GetUrl("https://login.salesforce.com/");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		Login("kpravallika@abc.com","saikona9");	 
+		//Login("kpravallika@abc.com","saikona9");	
+		Login(username,password);
 	}
 	
 	@Test

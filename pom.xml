@@ -22,7 +22,20 @@
     		<artifactId>testng</artifactId>
     		<version>6.14.3</version>
 		</dependency>
-		
+				<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+    		<groupId>com.aventstack</groupId>
+    		<artifactId>extentreports</artifactId>
+    		<version>4.0.9</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.18.0</version>
+		</dependency>
+
 	</dependencies>
 	<build>
     <pluginManagement>
@@ -34,11 +47,19 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>
-                            src\test\resources\testng.xml
+                            src\test\resources\RegressionSuite.xml
                         </suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
         </plugins>
     </pluginManagement>
 </build>
