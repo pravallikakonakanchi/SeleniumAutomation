@@ -39,9 +39,18 @@ public class OpportunitiesPage extends BasePage {
 	public WebElement leadSource;
 	
 	@FindBy(xpath = "//input[@id='opp17']")
-	public WebElement primaryCampign;
+	public WebElement primaryCampignSource;
 
-
+	@FindBy(xpath = "(//input[@value=' Save '])[1]")
+	public WebElement saveButton;
+	
+	@FindBy(xpath = "//a[contains(text(),'Opportunity Pipeline')]")
+	public WebElement oppourtunityPipeline;
+	
+	@FindBy(xpath = "//a[contains(text(),'Stuck Opportunities')]")
+	public WebElement stuckOppourtunity;
+	
+	////select[@id='quarter_q']
 public void clickOpportunitiesTab(WebDriver driver) {
 	if (opportunities.isDisplayed()) {
 		opportunities.click();
@@ -75,6 +84,49 @@ public void enteroppourtunitiesName(WebDriver driver, String sname) {
 		oppourtunitiesName.sendKeys(sname);
 	} else {
 		System.out.println("oppourtunityname element is not visible");
+	}
+}
+
+public void enterAccountName(WebDriver driver, String sname) {
+	if (accountName.isDisplayed()) {
+		accountName.sendKeys(sname);
+	} else {
+		System.out.println("accountName element is not visible");
+	}
+}
+public void enterCloseDate(WebDriver driver, String sname) {
+	if (closeDate.isDisplayed()) {
+		closeDate.sendKeys(sname);
+	} else {
+		System.out.println("closeDate element is not visible");
+	}
+}
+
+public void clickSaveButton(WebDriver driver) {
+	if (saveButton.isDisplayed()) {
+		saveButton.click();
+	} else {
+		System.out.println("savebutton is not visible");
+	}
+}
+
+public void clickOppurtunityPipeLineButton(WebDriver driver) {
+	if (oppourtunityPipeline.isDisplayed()) {
+		oppourtunityPipeline.click();
+	} else {
+		System.out.println("oppourtunityPipeline is not visible");
+	}
+}
+
+/*SalesForce login page is launched and application home page is logged in with correct username.
+Opportunities home page is displayed
+Report Page with the Opportunities that are pipelined will be displayed.*/
+
+public void clickStuckOppurtunity(WebDriver driver) {
+	if (stuckOppourtunity.isDisplayed()) {
+		stuckOppourtunity.click();
+	} else {
+		System.out.println("stuckoppourtunity is not visible");
 	}
 }
 }
