@@ -47,6 +47,7 @@ public class LoginTest extends BaseTest {
 		Thread.sleep(4000);
 		
 		// Verify login was successful
+	      //test
 	    HomePage homePage = new HomePage(driver);
 	    String actualTitle = driver.getTitle();
 	    String expectedTitle = "Home Page ~ Salesforce - Developer Edition";
