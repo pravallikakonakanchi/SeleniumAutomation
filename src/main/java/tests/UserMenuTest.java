@@ -80,6 +80,7 @@ public class UserMenuTest extends BaseTest {
 		WebDriver driver = BaseTest.getDriver();
 		LoginPage lp = new LoginPage(driver);
 		UserMenuPage ump = new UserMenuPage(driver);
+		System.out.println("Launch browser");
 		Assert.assertTrue(lp.launchApp(driver, "https://login.salesforce.com/"), "Actual URL should match the expected URL");
 		lp.enterUsername(driver, PropertiesFileutils.readPropertiesFile(FileConstants.CREDENTIALS_FILE_PATH, "dev.username"));
 		lp.enterPassword(driver, PropertiesFileutils.readPropertiesFile(FileConstants.CREDENTIALS_FILE_PATH, "dev.password"));
